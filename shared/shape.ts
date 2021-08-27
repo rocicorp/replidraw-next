@@ -1,5 +1,5 @@
 import * as t from "io-ts";
-import { must } from "../backend/decode";
+import { must } from "./decode";
 import { nanoid } from "nanoid";
 import { randInt } from "./rand";
 import { ReadStorage, WriteStorage } from "./storage";

@@ -1,0 +1,35 @@
+{
+  "name": "replidraw-worker",
+  "description": "Cloudflare Worker Backend for Replidraw",
+  "version": "1.0.0",
+  "private": true,
+  "module": "./dist/worker/src/main.mjs",
+  "scripts": {
+    "build": "tsc && renamer --force --find '/\\.js(\\.map)?$/' --replace '.mjs$1' './dist/**/*.*'",
+    "format": "prettier --write  '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
+    "lint": "eslint --max-warnings=0 src && prettier --check '*.{json,js}' 'src/**/*.{js,ts}' 'test/**/*.{js,ts}'",
+    "zodgen": "ts-to-zod src/replicache-protocol-types.ts src/replicache-protocol-schemas.ts"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "typescript",
+      "prettier"
+    ]
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^2.2.2",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-typescript": "^3.0.0",
+    "prettier": "^2.3.0",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "renamer": "^3.2.1",
+    "ts-to-zod": "^1.4.0",
+    "zod": "^3.8.1"
+  }
+}

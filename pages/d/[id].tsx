@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Replicache } from "replicache";
-import { createData, mutators } from "../../frontend/data";
+import { createData } from "../../frontend/data";
 import { Designer } from "../../frontend/designer";
 import { Nav } from "../../frontend/nav";
+import { mutators } from "../../shared/mutators";
 import Pusher from "pusher-js";
 
 import type { Data } from "../../frontend/data";
